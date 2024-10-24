@@ -73,8 +73,110 @@
 .snoopy-wrapper img {
     transform: translate(300px, 50px) scale(-1);
     transition: all 1s ease;
+    width: 100px;
 }
 
 .snoopy-wrapper:hover img {
     transform: translate(300px, 50px) scale(1);
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-50px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes progress {
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.animated-element {
+    animation: bounce 1s infinite;
+}
+
+.fade-in {
+    animation: fadeIn 2s ease forwards;
+}
+.fade-out {
+    animation: fadeOut 2s ease forwards;
+}
+.fade-in-out {
+    animation: fadeIn 1s ease, fadeOut 2s ease 3s;
+}
+.progress-bar {
+    width: 0%;
+    background-color: #00c200;
+    height: 3px;
+    animation: progress 3s linear infinite;
+}
+.loading-spinner-parent {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.loading-spinner {
+    animation: rotate 1s linear infinite;
+    height: 20px;
+    width: 20px;
+    background-color: #00c200;
+}
+
+.intro {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: lightsteelblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-text {
+    font-size: 200px;
+    font-weight: 700;
+    border: 8px solid black;
+    border-radius: 9999px;
+    padding: 40px 80px;
+    cursor: pointer;
+}
+
+.intro-text:hover {
+    background-color: black;
+    color: white;
 }
